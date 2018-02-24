@@ -20,13 +20,16 @@ const initialState: State = {
 export function reducer(state = initialState, action: BirthdayActions.Actions): State {
     switch (action.type) {
         case BirthdayActions.ADD_BIRTHDAY:
-            return {
+            let temp = {
                 ...state,
                 birthdays: [
                     ...state.birthdays,
-                    Object.assign({}, action.payload, { id: uuid()})
+                    action.payload
+                    //Object.assign({}, action.payload, { id: uuid()})
                 ]
             }
+
+            return temp
         case BirthdayActions.UPDATE_BIRTHDAY:
             return {
                 ...state

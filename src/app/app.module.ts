@@ -9,7 +9,7 @@ import { HomePage } from '../pages/home/home';
 import { DetailsPage } from '../pages/details/details'
 
 import { StoreModule } from '@ngrx/store'
-import { reducer } from '../store/birthday/birthday.reducer'
+import { reducers } from '../store/reducers'
 
 @NgModule({
   declarations: [
@@ -20,7 +20,7 @@ import { reducer } from '../store/birthday/birthday.reducer'
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    StoreModule.forRoot(reducer)
+    StoreModule.forRoot(reducers)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
